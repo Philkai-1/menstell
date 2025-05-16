@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="de-DE" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menstell Kaminholz & Grünpflege</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .active-link {
+      color: #009425; /* Tailwind blue-500 */
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body class="text-white bg-gray-900 dark:bg-black">
+
+  <!-- Navbar -->
+  <header class="fixed w-full top-0 z-50 bg-black bg-opacity-60 backdrop-blur-sm">
+    <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+      <div class="text-2xl font-bold"><a href="index.html"><img src="logo.PNG" width="100px"></a></div>
+      <nav id="navbar" class="hidden md:flex space-x-4">
+        <a href="index.html#start" class="nav-link px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 text-white transition">Start</a>
+        <a href="index.html#ueber uns" class="nav-link px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 text-white transition">Über uns</a>
+        <a href="index.html#kontakt" class="nav-link px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 text-white transition">Kontakt</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden focus:outline-none text-white">☰</button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2 text-center">
+      <a href="index.html#start" class="nav-link block">Start</a>
+      <a href="index.html#ueber uns" class="nav-link block">Über uns</a>
+      <a href="index.html#kontakt" class="nav-link block">Kontakt</a>
+    </div>
+  </header>
+
+<main>
+<section id="impressum" class="py-16 px-6 bg-gray-100 dark:bg-gray-900 text-black dark:text-white mt-32">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-2xl font-bold mb-4">Impressum</h2>
+    <p class="text-sm leading-relaxed">
+      <strong>Angaben gemäß § 5 TMG:</strong><br>
+      Frank Menstell<br>
+      Menstell Kaminholz & Grünpflege<br>
+      Brunnäcker 5<br>
+      79793 Wutöschingen<br><br>
+
+      <strong>Kontakt:</strong><br>
+      Telefon: +49 173 6569393<br>
+      E-Mail: kaminholz@menstell.de<br><br>
+
+      <strong>Umsatzsteuer-ID:</strong><br>
+      Umsatzsteuer-Identifikationsnummer gemäß §27 a Umsatzsteuergesetz:<br>
+      DE...<br><br>
+
+      <strong>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong><br>
+      Janine Menstell, Brunnäcker 5, 79793 Wutöschingen<br><br>
+
+      <strong>Haftungsausschluss:</strong><br>
+      Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+    </p>
+  </div>
+</section>
+</main>
+
+<footer class="bg-gray-100 dark:bg-gray-800 text-white py-8">
+  <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-2 gap-8 text-center md:text-left">
+    <!-- Spalte 1: Über uns -->
+    <div>
+      <h4 class="font-bold text-lg mb-2">Frank Menstell</h4>
+      <p class="text-sm">Kaminholz & Grünpflege<br>Nachhaltig. Regional. Persönlich.</p>
+    </div>
+
+    <!-- Spalte 2: Links -->
+    <div>
+      <h4 class="font-bold text-lg mb-2">Rechtliches</h4>
+      <ul class="space-y-1 text-sm">
+        <li><a href="impressum.html" class="hover:underline">Impressum</a></li>
+        <li><a href="datenschutz.html" class="hover:underline">Datenschutzerklärung</a></li>
+        <li><a href="index.html#kontakt" class="hover:underline">Kontakt</a></li>
+      </ul>
+    </div>
+
+    <!-- Spalte 3: Social Media (optional) -->
+    <!--
+    <div>
+      <h4 class="font-bold text-lg mb-2">Folgen Sie uns</h4>
+      <div class="flex justify-center md:justify-start space-x-4">
+        <a href="#" aria-label="Facebook"><svg class="w-5 h-5" ...></svg></a>
+        <a href="#" aria-label="Instagram"><svg class="w-5 h-5" ...></svg></a>
+      </div>
+    </div>
+    -->
+  </div>
+
+  <div class="mt-8 text-center text-xs text-gray-400">
+    <p>&copy; 2025 Menstell Kaminholz & Grünpflege</p>
+    <p>Website erstellt von <span class="font-semibold">Philipp Kaiser</span></p>
+  </div>
+</footer>
+
+  <!-- JS für Mobile-Menü & Scrollspy -->
+  <script>
+    // Mobile-Menü Toggle
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('mobile-menu');
+    toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+    // Scrollspy-Funktion
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll(".nav-link");
+
+    window.addEventListener("scroll", () => {
+      let current = "";
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop - 100;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute("id");
+        }
+      });
+
+      navLinks.forEach((link) => {
+        link.classList.remove("active-link");
+        if (link.getAttribute("href") === "#" + current) {
+          link.classList.add("active-link");
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
