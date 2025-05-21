@@ -2,8 +2,23 @@
 <html lang="de-DE" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Menstell Kaminholz & Grünpflege</title>
+
+  <meta name="description" content="Lokales Einzelunternehmen im Bereich Kaminholz und Gruenpflege">
+  <meta name="author" content="Philipp Kaiser">
+
+  <!-- Open Graph Protocol -->
+  <meta property="og:title" content="Menstell Kaminholz & Gruenpflege">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.menstell.de">
+  <meta property="og:description" content="Nachhaltig. Regional. Persönlich">
+  <meta property="og:image" content="sto.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .active-link {
@@ -36,11 +51,11 @@
   <!-- Hero Section -->
   <section id="start" class="relative h-screen bg-cover bg-center flex items-center justify-center text-center px-4">
     <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
-      <source src="https://www.dropbox.com/scl/fi/g9ielbg68k58dx9wm0egc/trees-2.mp4?rlkey=7l74byvve4brgt1cqcd5n1dnw&st=3q0ig9tq&raw=1" type="video/mp4">
+      <source src="trees-2.mp4" type="video/mp4">
       Dein Browser unterstützt das Video-Tag nicht.
     </video>
     <div class="absolute inset-0 bg-green-900 bg-opacity-30"></div>
-    <div class="relative z-10 max-w-2xl text-white-900">
+    <div class="relative z-10 max-w-2xl text-white">
       <h1 class="text-4xl md:text-6xl font-bold mb-2">Menstell</h1>
       <h2 class="text-2xl md:text-4xl font-bold mb-2">Kaminholz & Grünpflege</h2>
       <p class="text-lg md:text mb-8">Nachhaltig. Regional. Persönlich</p>
@@ -51,12 +66,12 @@
   </section>
 
   <!-- Ueber uns Section -->
-  <section id="ueber uns" class="h-screen bg-gray-100 dark:bg-gray-800 text-black dark:text-white flex items-center justify-center" style="background-image: url(baumstamm.jpg); background-position: center; background-attachment: fixed; background-size: cover; color: white; background-repeat: no-repeat; ;">
+  <section id="ueber uns" class="min-h-screen bg-gray-100 dark:bg-gray-800 text-black dark:text-white flex items-center justify-center" style="background-image: url(baumstamm.jpg); background-position: center; background-attachment: fixed; background-size: cover; color: white;">
     <div class="bg-black bg-opacity-80 p-8 rounded-xl text-center max-w-3xl">
     <img src="logo.PNG" width="100px" class="mx-auto">
-    <h2 class="text-3xl font-bold mb-4">Über uns</h2>
-    <h3 class="text-2xl mb-4">Nachhaltig. Regional. Persönlich</h3>
-    <p class="text-lg">Menstell steht für verantwortungsvollen Umgang mit der Natur und für echtes Handwerk. Unser Brennholz stammt ausschließlich aus heimischen Wäldern, wird sorgfältig aufbereitet und schonend getrocknet - für effiziente Wärme mit gutem Gewissen.<br><br>
+    <h2 class="text-2xl sm:text-3xl font-bold mb-4">Über uns</h2>
+    <h3 class="text-xl sm:text-2xl mb-4">Nachhaltig. Regional. Persönlich</h3>
+    <p class="text-base sm:text-lg">Menstell steht für verantwortungsvollen Umgang mit der Natur und für echtes Handwerk. Unser Brennholz stammt ausschließlich aus heimischen Wäldern, wird sorgfältig aufbereitet und schonend getrocknet - für effiziente Wärme mit gutem Gewissen.<br><br>
                       Neben wohliger Wärme sorgen wir auch draußen für Ordnung: Mit Erfahrung, Fachwissen und dem richtigen Auge fürs Detail führen wir professionelle Grünpflege durch. Ob Hecken- und Strauchschnitt, Rasenpflege oder kleinere Gartenarbeiten - wir kümmern uns darum, dass Ihr Außenbereich in Bestform bleibt.
     </p>
     <br>
@@ -65,7 +80,7 @@
   </section>
 
   <!-- Bilder Section -->
-  <section id="bilder" style="background-image: url(baumstamm.jpg); background-position: center; background-attachment: fixed; background-size: cover; color: white; background-repeat: no-repeat; ;">
+  <section id="bilder" style="background-image: url(baumstamm.jpg); background-position: center; background-attachment: fixed; background-size: cover; color: white;">
   <div class="flex flex-wrap justify-center text-center items-center gap-6 p-4">
     <!-- Karte 1 -->
     <div class="max-w-sm bg-black rounded-lg overflow-hidden shadow-lg">
@@ -86,17 +101,13 @@
   </section>
 
   <!-- Kontakt Section -->
-  <section id="kontakt" class="h-screen py-16 px-6 bg-white dark:bg-gray-900 text-black dark:text-white flex items-center justify-center">
-    <video autoplay muted loop playsinline class="absolute left-0 w-full h-full object-cover">
-      <source src="https://www.dropbox.com/scl/fi/b9d2e8a4ylgfmv02mna6s/trees-1.mp4?rlkey=9vjqrurxmom8tvtmcx6zwrmj2&st=ow1vkhim&raw=1" type="video/mp4">
-      Dein Browser unterstützt das Video-Tag nicht.
-    </video>
+  <section id="kontakt" class="min-h-screen py-16 px-6 bg-gray-800 dark:bg-gray-800 text-black dark:text-white flex items-center justify-center">
     <div class="absolute max-w-3xl mx-auto text-center">
       <h2 class="text-2xl font-bold mb-4">Kontakt ✉️</h2>
       <form class="space-y-4">
-        <input type="text" placeholder="Name" class="w-full p-3 rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700" />
-        <input type="email" placeholder="E-Mail" class="w-full p-3 rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700" />
-        <textarea placeholder="Anfrage" rows="5" class="w-full p-3 rounded bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700"></textarea>
+        <input type="text" placeholder="Name" class="w-full p-3 rounded bg-white dark:bg-white border border-gray-300 dark:border-gray-700" />
+        <input type="email" placeholder="E-Mail" class="w-full p-3 rounded bg-white dark:bg-white border border-gray-300 dark:border-gray-700" />
+        <textarea placeholder="Anfrage" rows="5" class="w-full p-3 rounded bg-white dark:bg-white border border-gray-300 dark:border-gray-700"></textarea>
         <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded font-semibold transition">Absenden</button>
       </form>
     </div>
@@ -104,7 +115,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-100 dark:bg-gray-800 text-white py-8">
+  <footer class="bg-gray-900 dark:bg-gray-900 text-white py-8">
   <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-2 gap-8 text-center md:text-left">
     <!-- Spalte 1: Über uns -->
     <div>
@@ -141,32 +152,6 @@
 </footer>
 
   <!-- JS für Mobile-Menü & Scrollspy -->
-  <script>
-    // Mobile-Menü Toggle
-    const toggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('mobile-menu');
-    toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
-
-    // Scrollspy-Funktion
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".nav-link");
-
-    window.addEventListener("scroll", () => {
-      let current = "";
-      sections.forEach((section) => {
-        const sectionTop = section.offsetTop - 100;
-        if (pageYOffset >= sectionTop) {
-          current = section.getAttribute("id");
-        }
-      });
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active-link");
-        if (link.getAttribute("href") === "#" + current) {
-          link.classList.add("active-link");
-        }
-      });
-    });
-  </script>
+<script src="js/scripts.js"></script>
 </body>
 </html>
