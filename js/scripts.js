@@ -3,9 +3,14 @@
     const menu = document.getElementById('mobile-menu');
     toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
 
-    // Scrollspy-Funktion
+// Scrollspy-Funktion
     const sections = document.querySelectorAll("section");
     const navLinks = document.querySelectorAll(".nav-link");
+
+// Navbar Mobile
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+
 
     window.addEventListener("scroll", () => {
       let current = "";
@@ -23,3 +28,13 @@
         }
       });
     });
+
+window.addEventListener('scroll', function () {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    if (scrollTop > lastScrollTop && scrollTop > 50) {
+      header.classList.add('-translate-y-full');
+    } else {
+      header.classList.remove('-translate-y-full');
+    }
+    lastScrollTop = scrollTop;
+  });
