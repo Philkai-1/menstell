@@ -42,7 +42,7 @@
 <body class="text-white bg-gradient-to-br from-green-800 to-black">
 
   <!-- Navbar -->
-  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-transparent text-white transition-all duration-300 ease-in-out">
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black/70 to-transparent text-white transition-all duration-300 ease-in-out">
     <div id="header-inner" class="max-w-7xl mx-auto flex items-center justify-between px-4 py-6 md:py-8 transition-all duration-300 ease-in-out">
       <a href="index.html" class="flex-shrink-0">
         <img id="logo-img" src="logo.png" alt="Logo" class="w-24 md:w-28 transition-all duration-300 ease-in-out" />
@@ -54,15 +54,15 @@
         <a href="#kontakt" class="nav-link px-3 py-2 rounded-md hover:bg-gray-200 hover:text-gray-900 transition text-white">Kontakt</a>
       </nav>
 
-      <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none">
+      <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none z-50 fixed right-4">
         &#9776;
       </button>
     </div>
     
-    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-3 bg-transparent text-center">
-      <a href="#start" class="nav-link block text-white py-2">Start</a>
-      <a href="#ueber-uns" class="nav-link block text-white py-2">Über uns</a>
-      <a href="#kontakt" class="nav-link block text-white py-2">Kontakt</a>
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white/10 backdrop-blur-md z-40 flex flex-col items-center justify-center space-y-6 text-xl font-semibold">
+      <a href="#start" class="nav-link hover:text-green-700">Start</a>
+      <a href="#ueber uns" class="nav-link hover:text-green-700">Über uns</a>
+      <a href="#kontakt" class="nav-link hover:text-green-700">Kontakt</a>
     </div>
   </header>
 
