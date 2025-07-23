@@ -2,8 +2,35 @@
 <html lang="de-DE" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Menstell Kaminholz & Grünpflege</title>
+
+  <meta name="description" content="Menstell – Ihr lokaler Anbieter für nachhaltiges Kaminholz, Baum- & Grünpflege im Raum Waldshut-Tiengen. Persönlich. Regional. Zuverlässig.">
+  <meta name="author" content="Philipp Kaiser">
+
+  <!-- Open Graph Protocol -->
+  <meta property="og:title" content="Menstell Kaminholz & Gruenpflege">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="Menstell Kaminholz & Grünpflege">
+  <meta property="og:url" content="https://www.menstell.de">
+  <meta property="og:description" content="Nachhaltig. Regional. Persönlich">
+  <meta property="og:image" content="sto.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Menstell Kaminholz & Grünpflege">
+  <meta name="twitter:description" content="Nachhaltig. Regional. Persönlich.">
+  <meta name="twitter:image" content="https://www.menstell.de/images/sto.png">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Menstell" />
+  <link rel="manifest" href="site.webmanifest" />
+
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     .active-link {
@@ -12,24 +39,35 @@
     }
   </style>
 </head>
-<body class="text-white bg-gray-800 dark:bg-gray-800">
+<body class="text-white bg-gradient-to-br from-green-800 to-black">
 
   <!-- Navbar -->
-  <header class="fixed w-full top-0 z-50 bg-black bg-opacity-60 backdrop-blur-sm transition-transform duration-300">
-    <div class="max-w-7xl mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
-      <div class="text-xl md:text-2xl font-bold"><a href="index.html"><img src="logo.png" class="w-20 md:w-24"></a></div>
-      <nav id="navbar" class="hidden md:flex space-x-4">
-        <a href="index.html#start" class="nav-link px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 text-white transition">Start</a>
-        <a href="index.html#ueber uns" class="nav-link px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 text-white transition">Über uns</a>
-        <a href="index.html#kontakt" class="nav-link px-4 py-2 rounded-md bg-white/10 hover:bg-white/20 text-white transition">Kontakt</a>
+  <header id="main-header" class="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-black/70 to-transparent text-white transition-all duration-300 ease-in-out">
+    <div id="header-inner" class="max-w-7xl mx-auto flex items-center justify-between px-4 py-6 md:py-8 transition-all duration-300 ease-in-out">
+      <a href="index.html" class="flex-shrink-0">
+        <img id="logo-img" src="logo.png" alt="Logo" class="w-24 md:w-28 transition-all duration-300 ease-in-out" />
+      </a>
+
+      <nav id="navbar" class="hidden md:flex space-x-6 drop-shadow-lg">
+        <a href="#start" class="nav-link px-3 py-2 rounded-md hover:bg-gray-200 hover:text-gray-900 transition text-white">Start</a>
+        <a href="#ueber uns" class="nav-link px-3 py-2 rounded-md hover:bg-gray-200 hover:text-gray-900 transition text-white">Über uns</a>
+        <a href="#kontakt" class="nav-link px-3 py-2 rounded-md hover:bg-gray-200 hover:text-gray-900 transition text-white">Kontakt</a>
       </nav>
-      <button id="menu-toggle" class="md:hidden focus:outline-none text-white">☰</button>
+
+      <!-- Burger Button -->
+      <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none z-50 fixed right-4">
+        &#9776;
+      </button>
+
     </div>
-    <div id="mobile-menu" class="hidden md:hidden px-4 pb-4 space-y-2 text-center">
-      <a href="index.html#start" class="nav-link block">Start</a>
-      <a href="index.html#ueber uns" class="nav-link block">Über uns</a>
-      <a href="index.html#kontakt" class="nav-link block">Kontakt</a>
+    
+    <!-- Mobiles Menü -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-white/10 backdrop-blur-md z-40 flex flex-col items-center justify-center space-y-6 text-xl font-semibold">
+      <a href="#start" class="nav-link hover:text-green-700">Start</a>
+      <a href="#ueber uns" class="nav-link hover:text-green-700">Über uns</a>
+      <a href="#kontakt" class="nav-link hover:text-green-700">Kontakt</a>
     </div>
+
   </header>
 
   <!-- Datenschutz -->
