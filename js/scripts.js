@@ -1,23 +1,24 @@
-  // 🔧 Elemente & Variablen
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav-link");
   const header = document.getElementById('main-header');
   const headerInner = document.getElementById('header-inner');
   const logoImg = document.getElementById('logo-img');
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-link");
   const hero = document.getElementById('start');
 
   let lastScrollTop = 0;
 
-  // Menü-Toggle mobile
-  toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
+  // Mobile-Menü öffnen/schließen
+  toggle.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
 
-  window.addEventListener("scroll", () => {
+  window.addEventListener('scroll', () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const heroHeight = hero.offsetHeight;
 
-    // --- 1. Scrollspy (aktiver Link)
+    // Scrollspy: Aktiven Link setzen
     let current = "";
     sections.forEach(section => {
       if (scrollTop >= section.offsetTop - 100) {
@@ -28,7 +29,7 @@
       link.classList.toggle("active-link", link.getAttribute("href") === "#" + current);
     });
 
-    // --- 2. Header hide/show
+    // Header Hide/Show bei Scrollrichtung
     if (scrollTop > lastScrollTop && scrollTop > 50) {
       header.classList.add('-translate-y-full');
     } else {
@@ -36,24 +37,46 @@
     }
     lastScrollTop = scrollTop;
 
-    // --- 3. Desktop-shrinking ab Hero-Ende
     const isDesktop = window.innerWidth >= 768;
-    if (isDesktop && scrollTop > heroHeight - 80) {
-      header.classList.replace('bg-transparent', 'bg-white');
-      header.classList.add('shadow', 'text-gray-900');
-      headerInner.classList.replace('py-6', 'py-2');
-      logoImg.classList.replace('w-24', 'w-16');
-    } else if (isDesktop) {
-      header.classList.replace('bg-white', 'bg-transparent');
-      header.classList.remove('shadow', 'text-gray-900');
-      headerInner.classList.replace('py-2', 'py-6');
-      logoImg.classList.replace('w-16', 'w-24');
+
+    if (isDesktop) {
+      if (scrollTop > heroHeight - 80) {
+        // Nach Scroll: weißer BG, Schatten, kleiner Header, dunkle Schrift
+        header.classList.remove('bg-transparent', 'text-white');
+        header.classList.add('bg-white', 'shadow', 'text-gray-900');
+        headerInner.classList.remove('py-6', 'md:py-8');
+        headerInner.classList.add('py-2', 'md:py-3');
+        logoImg.classList.remove('w-24', 'md:w-28');
+        logoImg.classList.add('w-16', 'md:w-20');
+        navLinks.forEach(link => {
+          link.classList.remove('text-white');
+          link.classList.add('text-gray-900', 'hover:bg-gray-200', 'hover:text-gray-900');
+        });
+      } else {
+        // Oberhalb Hero: transparent, groß, weiße Schrift
+        header.classList.add('bg-transparent', 'text-white');
+        header.classList.remove('bg-white', 'shadow', 'text-gray-900');
+        headerInner.classList.add('py-6', 'md:py-8');
+        headerInner.classList.remove('py-2', 'md:py-3');
+        logoImg.classList.add('w-24', 'md:w-28');
+        logoImg.classList.remove('w-16', 'md:w-20');
+        navLinks.forEach(link => {
+          link.classList.add('text-white');
+          link.classList.remove('text-gray-900', 'hover:bg-gray-200', 'hover:text-gray-900');
+        });
+      }
     } else {
-      // Mobile: bleibt immer transparent + groß
-      header.classList.replace('bg-white', 'bg-transparent');
-      header.classList.remove('shadow', 'text-gray-900');
-      headerInner.classList.replace('py-2', 'py-6');
-      logoImg.classList.replace('w-16', 'w-24');
+      // Mobile immer transparent, große Schrift
+      header.classList.add('bg-transparent', 'text-white');
+      header.classList.remove('bg-white', 'shadow', 'text-gray-900');
+      headerInner.classList.add('py-6', 'md:py-8');
+      headerInner.classList.remove('py-2', 'md:py-3');
+      logoImg.classList.add('w-24', 'md:w-28');
+      logoImg.classList.remove('w-16', 'md:w-20');
+      navLinks.forEach(link => {
+        link.classList.add('text-white');
+        link.classList.remove('text-gray-900', 'hover:bg-gray-200', 'hover:text-gray-900');
+      });
     }
   });
 
