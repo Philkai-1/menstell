@@ -42,7 +42,7 @@
     if (isDesktop) {
       if (scrollTop > heroHeight - 80) {
         // Nach Scroll: weißer BG, Schatten, kleiner Header, dunkle Schrift
-        header.classList.remove('bg-transparent', 'text-white');
+        header.classList.remove('bg-transparent', 'text-white', 'bg-gradient-to-b');
         header.classList.add('bg-white', 'shadow', 'text-gray-900');
         headerInner.classList.remove('py-6', 'md:py-8');
         headerInner.classList.add('py-2', 'md:py-3');
@@ -54,7 +54,7 @@
         });
       } else {
         // Oberhalb Hero: transparent, groß, weiße Schrift
-        header.classList.add('bg-transparent', 'text-white');
+        header.classList.add('bg-transparent', 'text-white', 'bg-gradient-to-b');
         header.classList.remove('bg-white', 'shadow', 'text-gray-900');
         headerInner.classList.add('py-6', 'md:py-8');
         headerInner.classList.remove('py-2', 'md:py-3');
