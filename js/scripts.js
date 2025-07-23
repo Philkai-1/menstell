@@ -5,11 +5,11 @@
     menu.classList.toggle('hidden');
   });
 
-  // === Scrollspy für aktive Links ===
+  // === Scrollspy ===
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
 
-  // === Header & Elemente ===
+  // === Header Elemente ===
   const header = document.getElementById('main-header');
   const headerInner = document.getElementById('header-inner');
   const logoImg = document.getElementById('logo-img');
@@ -21,7 +21,7 @@
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const heroHeight = hero.offsetHeight;
 
-    // --- Scrollspy aktivieren ---
+    // --- Scrollspy ---
     let current = "";
     sections.forEach((section) => {
       const sectionTop = section.offsetTop - 100;
@@ -37,7 +37,7 @@
       }
     });
 
-    // --- Header verstecken beim Runterscrollen ---
+    // --- Header-Hide beim Runterscrollen ---
     if (scrollTop > lastScrollTop && scrollTop > 50) {
       header.classList.add('-translate-y-full');
     } else {
@@ -45,23 +45,31 @@
     }
     lastScrollTop = scrollTop;
 
-    // --- Shrinking Header (nach Hero Section) ---
-    if (scrollTop > heroHeight - 80) {
-      // Hintergrund und Text
-      header.classList.remove('bg-transparent', 'text-white');
-      header.classList.add('bg-white', 'shadow', 'text-gray-900');
+    // --- Nur Desktop: Shrinking Header ---
+    if (window.innerWidth >= 768) {
+      if (scrollTop > heroHeight - 80) {
+        header.classList.remove('bg-transparent', 'text-white');
+        header.classList.add('bg-white', 'shadow', 'text-gray-900');
 
-      // Höhe reduzieren
-      headerInner.classList.remove('py-6', 'md:py-8');
-      headerInner.classList.add('py-2', 'md:py-3');
+        headerInner.classList.remove('py-6', 'md:py-8');
+        headerInner.classList.add('py-2', 'md:py-3');
 
-      // Logo verkleinern
-      logoImg.classList.remove('w-24', 'md:w-28');
-      logoImg.classList.add('w-16', 'md:w-20');
+        logoImg.classList.remove('w-24', 'md:w-28');
+        logoImg.classList.add('w-16', 'md:w-20');
+      } else {
+        header.classList.remove('bg-white', 'shadow', 'text-gray-900');
+        header.classList.add('bg-transparent', 'text-white');
+
+        headerInner.classList.remove('py-2', 'md:py-3');
+        headerInner.classList.add('py-6', 'md:py-8');
+
+        logoImg.classList.remove('w-16', 'md:w-20');
+        logoImg.classList.add('w-24', 'md:w-28');
+      }
     } else {
-      // Zurück zum ursprünglichen Zustand
-      header.classList.remove('bg-white', 'shadow', 'text-gray-900');
+      // Mobil: immer transparent, normale Größe
       header.classList.add('bg-transparent', 'text-white');
+      header.classList.remove('bg-white', 'shadow', 'text-gray-900');
 
       headerInner.classList.remove('py-2', 'md:py-3');
       headerInner.classList.add('py-6', 'md:py-8');
@@ -70,3 +78,4 @@
       logoImg.classList.add('w-24', 'md:w-28');
     }
   });
+
