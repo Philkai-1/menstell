@@ -1,15 +1,8 @@
-  // === Mobile-Menü Toggle ===
+  // 🔧 Elemente & Variablen
   const toggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('mobile-menu');
-  toggle.addEventListener('click', () => {
-    menu.classList.toggle('hidden');
-  });
-
-  // === Scrollspy ===
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
-
-  // === Header Elemente ===
   const header = document.getElementById('main-header');
   const headerInner = document.getElementById('header-inner');
   const logoImg = document.getElementById('logo-img');
@@ -17,27 +10,25 @@
 
   let lastScrollTop = 0;
 
+  // Menü-Toggle mobile
+  toggle.addEventListener('click', () => menu.classList.toggle('hidden'));
+
   window.addEventListener("scroll", () => {
     const scrollTop = window.scrollY || document.documentElement.scrollTop;
     const heroHeight = hero.offsetHeight;
 
-    // --- Scrollspy ---
+    // --- 1. Scrollspy (aktiver Link)
     let current = "";
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - 100;
-      if (scrollTop >= sectionTop) {
-        current = section.getAttribute("id");
+    sections.forEach(section => {
+      if (scrollTop >= section.offsetTop - 100) {
+        current = section.id;
       }
     });
-
-    navLinks.forEach((link) => {
-      link.classList.remove("active-link");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("active-link");
-      }
+    navLinks.forEach(link => {
+      link.classList.toggle("active-link", link.getAttribute("href") === "#" + current);
     });
 
-    // --- Header-Hide beim Runterscrollen ---
+    // --- 2. Header hide/show
     if (scrollTop > lastScrollTop && scrollTop > 50) {
       header.classList.add('-translate-y-full');
     } else {
@@ -45,37 +36,25 @@
     }
     lastScrollTop = scrollTop;
 
-    // --- Nur Desktop: Shrinking Header ---
-    if (window.innerWidth >= 768) {
-      if (scrollTop > heroHeight - 80) {
-        header.classList.remove('bg-transparent', 'text-white');
-        header.classList.add('bg-white', 'shadow', 'text-gray-900');
-
-        headerInner.classList.remove('py-6', 'md:py-8');
-        headerInner.classList.add('py-2', 'md:py-3');
-
-        logoImg.classList.remove('w-24', 'md:w-28');
-        logoImg.classList.add('w-16', 'md:w-20');
-      } else {
-        header.classList.remove('bg-white', 'shadow', 'text-gray-900');
-        header.classList.add('bg-transparent', 'text-white');
-
-        headerInner.classList.remove('py-2', 'md:py-3');
-        headerInner.classList.add('py-6', 'md:py-8');
-
-        logoImg.classList.remove('w-16', 'md:w-20');
-        logoImg.classList.add('w-24', 'md:w-28');
-      }
+    // --- 3. Desktop-shrinking ab Hero-Ende
+    const isDesktop = window.innerWidth >= 768;
+    if (isDesktop && scrollTop > heroHeight - 80) {
+      header.classList.replace('bg-transparent', 'bg-white');
+      header.classList.add('shadow', 'text-gray-900');
+      headerInner.classList.replace('py-6', 'py-2');
+      logoImg.classList.replace('w-24', 'w-16');
+    } else if (isDesktop) {
+      header.classList.replace('bg-white', 'bg-transparent');
+      header.classList.remove('shadow', 'text-gray-900');
+      headerInner.classList.replace('py-2', 'py-6');
+      logoImg.classList.replace('w-16', 'w-24');
     } else {
-      // Mobil: immer transparent, normale Größe
-      header.classList.add('bg-transparent', 'text-white');
-      header.classList.remove('bg-white', 'shadow', 'text-gray-900');
-
-      headerInner.classList.remove('py-2', 'md:py-3');
-      headerInner.classList.add('py-6', 'md:py-8');
-
-      logoImg.classList.remove('w-16', 'md:w-20');
-      logoImg.classList.add('w-24', 'md:w-28');
+      // Mobile: bleibt immer transparent + groß
+      header.classList.replace('bg-white', 'bg-transparent');
+      header.classList.remove('shadow', 'text-gray-900');
+      headerInner.classList.replace('py-2', 'py-6');
+      logoImg.classList.replace('w-16', 'w-24');
     }
   });
+
 
