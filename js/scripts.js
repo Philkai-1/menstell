@@ -1,4 +1,5 @@
   const toggle = document.getElementById('menu-toggle');
+  const menuIcon = document.getElementById('menu-icon');
   const menu = document.getElementById('mobile-menu');
   const header = document.getElementById('main-header');
   const headerInner = document.getElementById('header-inner');
@@ -9,9 +10,23 @@
 
   let lastScrollTop = 0;
 
-  // Mobile-Menü öffnen/schließen
+  // Einfaches Umschalten des Icons zwischen ☰ und ✖
   toggle.addEventListener('click', () => {
+    const menuIsOpen = !menu.classList.contains('hidden');
     menu.classList.toggle('hidden');
+    document.body.classList.toggle('overflow-hidden');
+    toggle.textContent = menuIsOpen ? '☰' : '✖';
+  });
+
+  // Menü schließen beim Klick auf Link
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (!menu.classList.contains('hidden')) {
+        menu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+        toggle.textContent = '☰';
+      }
+    });
   });
 
   window.addEventListener('scroll', () => {
@@ -42,7 +57,7 @@
     if (isDesktop) {
       if (scrollTop > heroHeight - 80) {
         // Nach Scroll: weißer BG, Schatten, kleiner Header, dunkle Schrift
-        header.classList.remove('bg-transparent', 'text-white', 'bg-gradient-to-b');
+        header.classList.remove('text-white', 'bg-transparent', 'bg-gradient-to-b');
         header.classList.add('bg-white', 'shadow', 'text-gray-900');
         headerInner.classList.remove('py-6', 'md:py-8');
         headerInner.classList.add('py-2', 'md:py-3');
@@ -74,7 +89,7 @@
       logoImg.classList.add('w-24', 'md:w-28');
       logoImg.classList.remove('w-16', 'md:w-20');
       navLinks.forEach(link => {
-        link.classList.add('text-white');
+        link.classList.add('text-black');
         link.classList.remove('text-gray-900', 'hover:bg-gray-200', 'hover:text-gray-900');
       });
     }
