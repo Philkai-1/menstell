@@ -63,10 +63,6 @@
         headerInner.classList.add('py-2', 'md:py-3');
         logoImg.classList.remove('w-24', 'md:w-28');
         logoImg.classList.add('w-16', 'md:w-20');
-        navLinks.forEach(link => {
-          link.classList.remove('text-white');
-          link.classList.add('text-gray-900', 'hover:bg-gray-200', 'hover:text-gray-900');
-        });
       } else {
         // Oberhalb Hero: transparent, groß, weiße Schrift
         header.classList.add('bg-transparent', 'bg-gradient-to-b');
@@ -75,10 +71,6 @@
         headerInner.classList.remove('py-2', 'md:py-3');
         logoImg.classList.add('w-24', 'md:w-28');
         logoImg.classList.remove('w-16', 'md:w-20');
-        navLinks.forEach(link => {
-          link.classList.add('text-white');
-          link.classList.remove('text-gray-900', 'hover:bg-gray-200', 'hover:text-gray-900');
-        });
       }
     } else {
       // Mobile immer transparent, große Schrift
