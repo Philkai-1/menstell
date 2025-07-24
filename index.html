@@ -94,68 +94,121 @@
       </a>
     </div>
   </section>
+    
+ <!-- Leistungen Section -->
+  <section id="leistungen" class="bg-gray-100 py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Unsere Leistungen</h2>
 
-  <!-- Ueber uns Section -->
-  <section id="ueber uns" class="min-h-screen text-white flex items-center justify-center md:bg-[url(wald.jpg)] bg-center bg-cover md:bg-fixed md:bg-no-repeat">
-    <div class="md:bg-black md:bg-opacity-80 p-8 rounded-xl text-center max-w-3xl">
-    <img src="logo.png" width="100px" class="mx-auto">
-    <h2 class="text-2xl sm:text-3xl font-bold mb-4">Über uns</h2>
-    <h3 class="text-xl sm:text-2xl mb-4">Nachhaltig. Regional. Persönlich</h3>
-    <p class="text-base sm:text-lg">Menstell steht für verantwortungsvollen Umgang mit der Natur und für echtes Handwerk. Unser Brennholz stammt ausschließlich aus heimischen Wäldern, wird sorgfältig aufbereitet und schonend getrocknet - für effiziente Wärme mit gutem Gewissen.<br><br>
-                      Neben wohliger Wärme sorgen wir auch draußen für Ordnung: Mit Erfahrung, Fachwissen und dem richtigen Auge fürs Detail führen wir professionelle Grünpflege durch. Ob Hecken- und Strauchschnitt, Rasenpflege oder kleinere Gartenarbeiten - wir kümmern uns darum, dass Ihr Außenbereich in Bestform bleibt.
-    </p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <!-- Kaminholz -->
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-2xl transition">
+          <div class="overflow-hidden rounded-xl shadow-md mb-4">
+            <img src="stacked.jpg" alt="Kaminholz" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Kaminholz</h3>
+          <p class="text-gray-700 text-base">
+            Ofenfertiges, luftgetrocknetes Brennholz aus nachhaltiger Forstwirtschaft. Regional geschlagen, sauber gespalten und auf Wunsch direkt zu Ihnen geliefert.
+          </p>
+        </div>
+
+        <!-- Grünpflege -->
+        <div class="bg-white p-8 rounded-xl shadow-lg text-center hover:shadow-2xl transition">
+          <div class="overflow-hidden rounded-xl shadow-md mb-4">
+            <img src="lawn.jpg" alt="Kaminholz" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300">
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Grünpflege</h3>
+          <p class="text-gray-700 text-base">
+            Vom präzisen Heckenschnitt bis zur ganzjährigen Rasenpflege – wir halten Ihre Grünflächen in Bestform. Verlässlich, gründlich und mit Blick fürs Detail.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Über uns Section -->
+  <section id="ueber uns" class="bg-white text-gray-800 py-20">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <img src="logo.png" alt="Menstell Logo" class="mx-auto mb-6 w-20 h-20">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Über uns</h2>
+      <p class="text-lg md:text-xl leading-relaxed">
+        Wir sind Menstell – ein regionaler Familienbetrieb mit Liebe zur Natur und zum Handwerk. 
+        Unser Brennholz stammt aus heimischen Wäldern und wird sorgfältig verarbeitet. 
+        Auch draußen sorgen wir für Ordnung: Mit Know-how und Feingefühl übernehmen wir die professionelle Pflege Ihres Gartens.
+      </p>
+    </div>
     <br>
-    <p class="text-lg font-semibold">Neugierig geworden? Wir freuen uns auf Ihre Anfrage!</p>
-    </div>
-  </section>
-
-  <!-- Bilder Section -->
-  <section id="bilder" class="min-h-screen text-white flex items-center justify-center md:bg-[url(wald.jpg)] bg-center bg-cover md:bg-fixed md:bg-no-repeat">
-  <div class="flex flex-wrap justify-center text-center items-center gap-6 p-4">
-    <!-- Karte 1 -->
-    <div class="max-w-sm bg-black rounded-lg overflow-hidden shadow-lg">
-      <img src="sto.png" class="w-full h-120 object-cover" />
-    </div>
-
-    <!-- Karte 2 -->
-    <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg">
-      <img src="sto-2.png" class="w-full h-120 object-cover" />
-    </div>
-
-    <!-- Karte 3 -->
-    <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg">
-      <img src="sto-3.png" class="w-full h-120 object-cover" />
-    </div>
-  </div>
-  <br><br>
-  </section>
-
-  <!-- Kontakt Section -->
-  <section id="kontakt" class="min-h-screen flex items-center justify-center md:bg-[url(wald.jpg)] bg-center bg-cover md:bg-fixed md:bg-no-repeat">
-  <div class="md:bg-black bg-opacity-80 p-8 rounded-xl text-center max-w-3xl">
-    <h2 class="text-2xl text-white font-bold mb-4">Kontakt ✉️</h2>
-    <form id="kontaktFormular" class="space-y-4 text-black">
-      <input type="text" name="name" placeholder="Name" required
-        class="w-full p-3 rounded bg-white border border-gray-300" />
-      <input type="email" name="email" placeholder="E-Mail" required
-        class="w-full p-3 rounded bg-white border border-gray-300" />
-      <textarea name="nachricht" placeholder="Anfrage" rows="5" required
-        class="w-full p-3 rounded bg-white border border-gray-300"></textarea>
-
-      <div class="text-left text-sm text-white">
-        <label class="inline-flex items-start gap-2">
-          <input type="checkbox" name="dsgvo" required class="mt-1">
-          <span>Ich stimme der Verarbeitung meiner Daten gemäß der <a href="datenschutz.html" class="underline text-green-400 hover:text-green-500" target="_blank">Datenschutzerklärung</a> zu.</span>
-        </label>
+    <div class="flex flex-wrap justify-center text-center items-center gap-6 p-4">
+      <!-- Karte 1 -->
+      <div class="max-w-sm bg-black rounded-lg overflow-hidden shadow-lg hover:shadow-2xl">
+        <img src="sto.png" class="w-full h-120 object-cover hover:scale-105 transition-transform duration-300" />
       </div>
 
-      <button type="submit"
-        class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded font-semibold transition">
-        Absenden
-      </button>
-    </form>
-  </div>
+      <!-- Karte 2 -->
+      <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl">
+        <img src="sto-2.png" class="w-full h-120 object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+
+      <!-- Karte 3 -->
+      <div class="max-w-sm bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl">
+        <img src="sto-3.png" class="w-full h-120 object-cover hover:scale-105 transition-transform duration-300" />
+      </div>
+    </div>
   </section>
+
+
+  <!-- Kontakt Section -->
+  <section id="kontakt" class="bg-gray-100 py-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Kontakt ✉️</h2>
+
+      <div class="bg-white p-8 rounded-xl shadow-lg">
+        <form id="kontaktFormular" class="space-y-6">
+          <!-- Name -->
+          <div>
+            <label class="block mb-2 text-gray-700 font-medium">Name</label>
+            <input type="text" name="name" required
+              class="w-full p-3 rounded border border-gray-300 focus:ring-2 focus:ring-green-500 focus:outline-none bg-white" />
+          </div>
+
+          <!-- E-Mail -->
+          <div>
+            <label class="block mb-2 text-gray-700 font-medium">E-Mail</label>
+            <input type="email" name="email" required
+              class="w-full p-3 rounded border border-gray-300 focus:ring-2 focus:ring-green-500 focus:outline-none bg-white" />
+          </div>
+
+          <!-- Nachricht -->
+          <div>
+            <label class="block mb-2 text-gray-700 font-medium">Nachricht</label>
+            <textarea name="nachricht" rows="5" required
+              class="w-full p-3 rounded border border-gray-300 focus:ring-2 focus:ring-green-500 focus:outline-none bg-white"></textarea>
+          </div>
+
+          <!-- DSGVO -->
+          <div class="text-sm text-gray-600">
+            <label class="inline-flex items-start gap-2">
+              <input type="checkbox" name="dsgvo" required class="mt-1">
+              <span>Ich stimme der Verarbeitung meiner Daten gemäß der 
+                <a href="datenschutz.html" class="underline text-green-600 hover:text-green-700" target="_blank">
+                  Datenschutzerklärung
+                </a> zu.
+              </span>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <div>
+            <button type="submit"
+              class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-lg font-semibold transition">
+              Nachricht senden
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
 
   <!-- Erfolgs-Popup -->
   <div id="popup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
@@ -169,7 +222,7 @@
   </main>
 
   <!-- Footer -->
-  <footer class="bg-gray-900 text-white py-8">
+  <footer class="bg-gray-700 text-white py-8">
   <div class="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-2 gap-8 text-center md:text-left">
     <!-- Spalte 1: Über uns -->
     <div>
