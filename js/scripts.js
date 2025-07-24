@@ -87,4 +87,27 @@
     }
   });
 
+// Mail Popup
+document.getElementById("kontaktFormular").addEventListener("submit", function(e) {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch("mail.php", {
+    method: "POST",
+    body: formData
+  })
+  .then(response => response.text())
+  .then(text => {
+    if (text.includes("Danke")) {
+      document.getElementById("popup").classList.remove("hidden");
+      form.reset();
+    } else {
+      alert("Fehler: " + text);
+    }
+  })
+  .catch(error => {
+    alert("Fehler beim Senden: " + error);
+  });
+});
 
