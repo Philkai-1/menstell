@@ -87,27 +87,31 @@
     }
   });
 
-// Mail Popup
-document.getElementById("kontaktFormular").addEventListener("submit", function(e) {
-  e.preventDefault();
-  const form = e.target;
-  const formData = new FormData(form);
+//Kontaktformular 
+document.getElementById('kontaktFormular').addEventListener('submit', async function (e) {
+    e.preventDefault(); // Verhindert normales Absenden
+    const form = e.target;
+    const data = new FormData(form);
+    const action = form.action;
 
-  fetch("mail.php", {
-    method: "POST",
-    body: formData
-  })
-  .then(response => response.text())
-  .then(text => {
-    if (text.includes("Danke")) {
-      document.getElementById("popup").classList.remove("hidden");
-      form.reset();
-    } else {
-      alert("Fehler: " + text);
+    try {
+      const response = await fetch(action, {
+        method: 'POST',
+        body: data,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        form.reset(); // Formular zurücksetzen
+        document.getElementById('popup').classList.remove('hidden'); // Popup anzeigen
+      } else {
+        alert('Es gab ein Problem beim Senden der Nachricht.');
+      }
+    } catch (error) {
+      alert('Ein Fehler ist aufgetreten. Bitte später erneut versuchen.');
     }
-  })
-  .catch(error => {
-    alert("Fehler beim Senden: " + error);
   });
-});
+
 
